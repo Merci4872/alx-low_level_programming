@@ -1,35 +1,6 @@
-#include "main.h"
-#include <stdio.h>
-
-/**
- * add_strings - adds two numbers represented as strings.
- * @n1: First number.
- * @n2: Second number.
- * @r: Buffer to store result.
- */
-void add_strings(char n1[5000], char n2[5000], char r[5000])
-{
-	int i, carry = 0;
-
-	for (i = 0; i < 5000; i++)
-		r[i] = '0';
-
-	for (i = 4999; i >= 0; i--)
-	{
-		int num = (n1[i] - '0') + (n2[i] - '0') + carry;
-		r[i] = (num % 10) + '0';
-		carry = num / 10;
-	}
-}
-
-/**
- * main - finds and prints the first 98 Fibonacci numbers, starting with 1 and 2
- *
- * Return: Always 0 (Success)
- */
 int main(void)
 {
-	int i;
+	int i, j;  // Declare the j variable here
 	char fib1[5000] = {0}, fib2[5000] = {0}, result[5000] = {0};
 
 	for (i = 0; i < 5000; i++)
@@ -45,7 +16,7 @@ int main(void)
 		printf(", %s", result);
 
 		/* Move to next Fibonacci terms */
-		for (int j = 0; j < 5000; j++)
+		for (j = 0; j < 5000; j++)   // Now, the loop uses the already declared j
 		{
 			fib1[j] = fib2[j];
 			fib2[j] = result[j];
