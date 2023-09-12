@@ -1,36 +1,16 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * _putchar - Write a character to stdout.
- * @c: The character to be printed.
- * Return: 1 on success. On error, -1 and errno is set.
+ * print_alphabet - function to print alphabet in lower case
+ * Return: 0
  */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
-/**
- * print_alphabet - Prints the alphabet in lowercase, followed by a newline.
- */
 void print_alphabet(void)
 {
-	char letter;
+	char i;
 
-	for (letter = 'a'; letter <= 'z'; letter++)
-	{
-		_putchar(letter);
-	}
+	for (i = 'a' ; i <= 'z' ; i++)
+		_putchar(i);
 	_putchar('\n');
-}
 
-/**
- * main - Entry point for the program.
- * Return: 0 on success.
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
 }
-
