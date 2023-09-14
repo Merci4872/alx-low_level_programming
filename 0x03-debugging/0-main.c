@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
-* main - tests function that prints if integer is positive or negative
+* main - tests function that prints if integer is positive or negative.
+* This comment was broken up to avoid the 80 character limit.
 * Return: 0
 */
 
