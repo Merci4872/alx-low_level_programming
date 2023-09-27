@@ -1,23 +1,43 @@
-/**
-* is_prime_number - Returns 1 if the input integer is a prime number,
-* otherwise return 0.
-*
-* @n: The number to check.
-*
-* Return: 1 if n is prime, otherwise 0.
-*/
-int is_prime_number(int n)
-{
-/*
-* If n is less than 2, it's not prime
-*/
-if (n < 2)
-return (0);
+#include "main.h"
 
-/*
-* Start checking for prime using the helper function,
-* starting with divisor 2
+/**
+* _strlen_recursion - find the length of a string.
+* @s: string to check.
+*
+* Return: length of the string.
 */
-return (check_prime(n, 2));
+int _strlen_recursion(char *s)
+{
+if (*s == '\0')
+return (0);
+return (1 + _strlen_recursion(s + 1));
+}
+
+/**
+* helper_palindrome - recursive helper function to check palindrome.
+* @s: string to check.
+* @len: length of the string.
+*
+* Return: 1 if palindrome, otherwise 0.
+*/
+int helper_palindrome(char *s, int len)
+{
+if (len <= 1)
+return (1);
+if (*s != s[len - 1])
+return (0);
+return (helper_palindrome(s + 1, len - 2));
+}
+
+/**
+* is_palindrome - checks if a string is a palindrome.
+* @s: string to check.
+*
+* Return: 1 if palindrome, otherwise 0.
+*/
+int is_palindrome(char *s)
+{
+int len = _strlen_recursion(s);
+return (helper_palindrome(s, len));
 }
 
